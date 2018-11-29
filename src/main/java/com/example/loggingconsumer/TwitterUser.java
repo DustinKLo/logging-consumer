@@ -4,12 +4,12 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class TwitterUser {
-    String name;
+    private String name;
 
     @SerializedName("screen_name")
-    String screenName;
+    private String screenName;
 
-    boolean verified;
+    private boolean verified;
 
     TwitterUser() {
         this.verified = false;
@@ -32,7 +32,6 @@ public class TwitterUser {
     public void setVerified(boolean verified) {
         this.verified = verified;
     }
-
     public boolean getVerified() {
         return this.verified;
     }

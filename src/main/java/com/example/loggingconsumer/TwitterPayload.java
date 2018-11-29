@@ -9,17 +9,17 @@ import java.util.Date;
 
 public class TwitterPayload {
     @SerializedName("user")
-    TwitterUser twitterUser;
+    private TwitterUser twitterUser;
 
-    String text;
+    private String text;
 
     @SerializedName("created_at")
-    Date createdAt;
+    private Date createdAt;
 
     @SerializedName("is_retweet")
-    boolean isRetweet;
+    private boolean isRetweet;
 
-    String lang;
+    private String lang;
 
 
     public void setTwitterUser(TwitterUser twitterUser) {

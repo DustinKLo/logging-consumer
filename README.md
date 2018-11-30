@@ -1,16 +1,21 @@
 Java spring application
+
 consumes data from a kafka topic source from twitter and pushes it to PostgreSQL
 
 
 download kafka: https://kafka.apache.org/downloads
+
 quickstart to get kafka running: https://kafka.apache.org/quickstart
 
 
 kafka twitter source connector: https://github.com/Eneco/kafka-connect-twitter
+
 copy the files to your kafka connect directory
 
 
 once you have kafka running with kafka connect
+
+```
 curl -X POST localhost:8083/connectors
 {
     "name": "test-twitter-source",
@@ -26,11 +31,13 @@ curl -X POST localhost:8083/connectors
 	    "track.terms": "programming,java,kafka,scala"
 	}
 }
+```
 
 
 
 postgresql commands:
 
+```
 createdb springbootdb
 
 CREATE TABLE tweets (
@@ -43,8 +50,10 @@ CREATE TABLE tweets (
     username character varying(255),
     verified boolean NOT NULL
 );
-
+```
 
 to run application:
+```
 mvn clean package
 java -jar target/logging-consumer-0.0.1-SNAPSHOT.jar
+```
